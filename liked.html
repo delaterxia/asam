@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Понравилось — Удивляй, надевай</title>
+    <link rel="stylesheet" href="css/header.css">
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f5ef;
+            color: #243020;
+        }
+
+        .liked-page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 132px 20px 72px;
+        }
+
+        .liked-page__head {
+            margin-bottom: 28px;
+        }
+
+        .liked-page__title {
+            margin: 0 0 8px;
+            font-size: clamp(1.9rem, 3vw, 2.4rem);
+        }
+
+        .liked-page__lead {
+            margin: 0;
+            color: #4e5c46;
+            line-height: 1.6;
+        }
+
+        .liked-empty {
+            background: #ffffff;
+            border: 1px solid rgba(36, 48, 32, 0.12);
+            border-radius: 16px;
+            padding: 26px;
+        }
+
+        .liked-empty__text {
+            margin: 0 0 14px;
+            line-height: 1.6;
+        }
+
+        .liked-empty__link {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: #243020;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .liked-empty__link:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="liked-page">
+        <header class="liked-page__head">
+            <h1 class="liked-page__title">Понравилось</h1>
+            <p class="liked-page__lead">Здесь будут отображаться товары, которые вы добавили в избранное.</p>
+        </header>
+
+        <section class="liked-empty" aria-label="Избранные товары">
+            <p class="liked-empty__text">Пока в избранном пусто. Перейдите в каталог и нажмите на сердечко у понравившегося товара.</p>
+            <a class="liked-empty__link" href="catalog.html">Перейти в каталог</a>
+        </section>
+    </main>
+
+    <script>
+        fetch("assets/header.html")
+            .then(function (response) { return response.text(); })
+            .then(function (data) {
+                var headerEl = document.getElementById("header-container");
+                if (headerEl) headerEl.innerHTML = data;
+            });
+    </script>
+</body>
+</html>

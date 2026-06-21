@@ -1,0 +1,141 @@
+<style>
+    .site-footer {
+        --sf-bg: var(--footer-green, #1a2414);
+        --sf-text: #fdfbf0;
+        --sf-muted: rgba(253, 251, 240, 0.78);
+        --sf-clay: #f2c4bc;
+        --sf-sage: #a8b89a;
+        margin-top: 0;
+        background: var(--sf-bg);
+        color: var(--sf-text);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
+    }
+
+    .site-footer a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .site-footer a:hover {
+        color: var(--sf-sage);
+    }
+
+    .site-footer__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: clamp(48px, 6vw, 72px) 40px 40px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+        gap: 40px 48px;
+        align-items: start;
+    }
+
+    .site-footer__brand {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .site-footer__logo {
+        display: inline-flex;
+        align-items: center;
+        line-height: 0;
+        width: fit-content;
+    }
+
+    .site-footer__logo img {
+        height: 44px;
+        width: auto;
+        display: block;
+        filter: brightness(1.1);
+    }
+
+    .site-footer__tagline {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--sf-muted);
+        max-width: 32ch;
+    }
+
+    .site-footer__title {
+        margin: 0 0 16px 0;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--sf-sage);
+    }
+
+    .site-footer__nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .site-footer__nav-list a {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--sf-text);
+    }
+
+    .site-footer__nav-list a:hover {
+        color: var(--sf-clay);
+    }
+
+    .site-footer__bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 40px 32px;
+        border-top: 1px solid rgba(242, 234, 219, 0.1);
+    }
+
+    .site-footer__copy {
+        margin: 0;
+        font-size: 0.82rem;
+        color: rgba(242, 234, 219, 0.4);
+        text-align: center;
+    }
+
+    @media (max-width: 900px) {
+        .site-footer__inner {
+            grid-template-columns: 1fr;
+            padding: 44px 24px 28px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .site-footer__bottom {
+            padding: 18px 20px 28px;
+        }
+    }
+</style>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+        <div class="site-footer__brand">
+            <a href="index.html" class="site-footer__logo" title="На главную">
+                <img src="images/logo.svg" alt="Удивляй — надевай" width="44" height="41">
+            </a>
+            <p class="site-footer__tagline">Ручная вышивка и одежда со вкусом. Натуральные материалы и современный силуэт.</p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Навигация в подвале">
+            <p class="site-footer__title">Разделы</p>
+            <ul class="site-footer__nav-list">
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+        <p class="site-footer__copy">© Удивляй — надевай, 2026</p>
+    </div>
+</footer>

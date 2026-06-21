@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    padding: 100px 0 24px;
+    margin: 0;
+}
+
+.product-card {
+    display: flex;
+    background: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+/* Левая часть - изображение */
+.product-image-section {
+    flex: 0 0 45%;
+    padding: 30px 20px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-main-image {
+    width: 350px;
+    height: 420px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.product-thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+    border-color: #6b8e6f;
+}
+
+/* Правая часть - информация */
+.product-info-section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Рейтинг */
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.rating-stars {
+    font-size: 16px;
+    color: #ffb800;
+}
+
+.rating-score {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.reviews-count {
+    font-size: 13px;
+    color: #999;
+}
+
+/* Описание */
+.product-description {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Варианты цвета */
+.color-variants {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.color-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.color-btn:hover {
+    border-color: #999;
+    transform: scale(1.1);
+}
+
+.color-red {
+    background-color: #e4500c;
+}
+
+.color-white {
+    background-color: #ebf2fc;
+}
+
+.color-beige {
+    background-color: #dfb99a;
+}
+
+/* Характеристики */
+.characteristics {
+    margin-bottom: 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.char-toggle {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.char-toggle::before {
+    content: '▼';
+    font-size: 10px;
+    transition: transform 0.3s;
+}
+
+.char-toggle:hover {
+    color: #6b8e6f;
+}
+
+.char-toggle.active::before {
+    transform: rotate(-180deg);
+}
+
+.char-toggle.active {
+    color: #6b8e6f;
+}
+
+.char-content {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.char-content ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.char-content li {
+    padding: 4px 0;
+}
+
+/* Цена и кнопки */
+.product-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-cart {
+    background-color: #c9604d;
+    color: white;
+    border-color: #d1614d;
+}
+
+.btn-cart:hover {
+    background-color: #5a7a5e;
+    box-shadow: 0 2px 6px #608565;
+    border-color: #699e70
+}
+
+.icon-like-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.icon-like-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #999;
+    transition: fill 0.3s;
+}
+
+.icon-like-btn:hover {
+    transform: scale(1.1);
+    border-color: #c9604d;
+}
+
+.icon-like-btn:hover svg {
+    fill: #e74c3c;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    height: 100%;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2001;
+}
+
+.close:hover {
+    color: #e74c3c;
+}
+
+.product-main-image,
+.thumbnail {
+    cursor: pointer;
+}
+
+/* Шапка задаётся только в assets/header.html — дублирующие правила ломали раскладку (flex:1 у .header-nav). */
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .product-card {
+        flex-direction: column;
+    }
+
+    .product-image-section {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .product-info-section {
+        padding: 20px;
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .actions {
+        width: 100%;
+    }
+
+    .btn {
+        flex: 1;
+    }
+
+    .product-footer {
+        flex-direction: column;
+    }
+
+    .price-section {
+        width: 100%;
+    }
+
+    .actions {
+        width: 100%;
+    }
+}

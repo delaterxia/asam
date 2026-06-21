@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет — Удивляй, надевай</title>
+    <link rel="stylesheet" href="css/header.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f5ef;
+            color: #243020;
+        }
+
+        .profile-page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 132px 20px 72px;
+        }
+
+        .profile-card {
+            background: #fff;
+            border: 1px solid rgba(36, 48, 32, 0.12);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .profile-title {
+            margin: 0 0 12px;
+            font-size: clamp(1.6rem, 3vw, 2rem);
+        }
+
+        .profile-text {
+            margin: 0 0 8px;
+            line-height: 1.55;
+        }
+
+        .profile-actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .profile-btn {
+            border: 1px solid rgba(36, 48, 32, 0.24);
+            border-radius: 10px;
+            padding: 10px 14px;
+            background: transparent;
+            color: #243020;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .profile-btn--primary {
+            background: #243020;
+            color: #fff;
+            border-color: #243020;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="profile-page">
+        <section class="profile-card" aria-label="Данные пользователя">
+            <h1 class="profile-title">Личный кабинет</h1>
+            <p class="profile-text" id="profile-name"></p>
+            <p class="profile-text" id="profile-email"></p>
+
+            <div class="profile-actions">
+                <a href="catalog.html" class="profile-btn profile-btn--primary">Перейти в каталог</a>
+                <button type="button" id="logout-btn" class="profile-btn">Выйти</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        fetch("assets/header.html")
+            .then(function (response) { return response.text(); })
+            .then(function (data) {
+                var headerEl = document.getElementById("header-container");
+                if (headerEl) headerEl.innerHTML = data;
+            });
+
+        (function () {
+            var authFlag = localStorage.getItem("asam_is_authorized");
+            var rawUser = localStorage.getItem("asam_auth_user");
+            var user = rawUser ? JSON.parse(rawUser) : null;
+
+            if (authFlag !== "1" || !user) {
+                window.location.replace("login.html");
+                return;
+            }
+
+            document.getElementById("profile-name").textContent = "Имя: " + (user.name || "Пользователь");
+            document.getElementById("profile-email").textContent = "Email: " + (user.email || "-");
+
+            document.getElementById("logout-btn").addEventListener("click", function () {
+                localStorage.removeItem("asam_is_authorized");
+                window.location.href = "login.html";
+            });
+        })();
+    </script>
+</body>
+</html>

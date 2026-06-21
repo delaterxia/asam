@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-copy">
+                <h1 class="hero-title">Удивляй - надевай</h1>
+                <p class="hero-lead"></p>
+                <a href="catalog.html" class="hero-button hero-button-primary">asam store</a>
+                <div class="hero-highlights">
+                    <span>Комфорт</span>
+                    <span>Уют</span>
+                    <span>Стиль</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+
+            <p class="services-subtitle">Оживляем орнаменты, чтобы они заиграли новыми красками</p>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon-wrap">
+                        <img class="service-icon" src="images/icon1.svg" alt="Ручная работа">
+                    </div>
+                    <h3>ручная работа</h3>
+                    <p>Все работы выполнены ручками наших умелых мастеров</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon-wrap">
+                        <img class="service-icon" src="images/icon2.svg" alt="Современный взгляд">
+                    </div>
+                    <h3>современный взгляд</h3>
+                    <p>Следуем моде: шоперы, оверсайз-футболки, куртки и другие товары</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon-wrap">
+                        <img class="service-icon" src="images/icon3.svg" alt="Натуральные материалы">
+                    </div>
+                    <h3>эко-материалы</h3>
+                    <p>Мы используем только высококачественный хлопок, лён и шерсть</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon-wrap">
+                        <img class="service-icon" src="images/icon4.svg" alt="Работаем на заказ">
+                    </div>
+                    <h3>работаем на заказ</h3>
+                    <p>Можем сделать всё по вашим эскизам, размерам и пожеланиям </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Catalog Section -->
+        <section class="catalog" aria-label="Каталог категорий">
+            <div class="catalog__top">
+                <h1 class="catalog__title">КАТАЛОГ</h1>
+            </div>
+
+            <article class="hero-card">
+                <h2 class="card__name">ВСЕ ТОВАРЫ</h2>
+            </article>
+
+            <div class="catalog__grid">
+                <article class="card">
+                    <h2 class="card__name">КОСТЮМЫ</h2>
+                    <span class="blob"></span>
+                    <span class="bottle"></span>
+                </article>
+
+                <article class="card">
+                    <h2 class="card__name">ОДЕЖДА</h2>
+                    <span class="blob"></span>
+                    <span class="bottle"></span>
+                </article>
+
+                <article class="card">
+                    <h2 class="card__name">АКСЕССУАРЫ</h2>
+                    <span class="blob"></span>
+                    <span class="bottle"></span>
+                </article>
+
+                <article class="card">
+                    <h2 class="card__name">ГОЛОВНЫЕ УБОРЫ</h2>
+                    <span class="blob"></span>
+                    <span class="bottle"></span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Наша мастерская -->
+        <section class="location" aria-labelledby="location-heading">
+            <div class="location-content">
+                <div class="location-info">
+                    <h2 id="location-heading" class="location-title">Наша мастерская</h2>
+                    <p class="location-address">г. Чебоксары, ул. Композиторов Воробьевых, 20</p>
+                    <p class="location-hours">ЧАСЫ РАБОТЫ<br>ПН-ПТ: 10:00 - 19:00<br>СБ-ВС: 11:00 - 18:00</p>
+                </div>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3800.1291640846807!2d47.24505369639116!3d56.14376147672093!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415a3829359d28f7%3A0xccb7aef7e8b06de0!2z0YPQuy4g0JrQvtC80L_QvtC30LjRgtC-0YDQvtCyINCS0L7RgNC-0LHRjNC10LLRi9GFLCAyMCwg0KfQtdCx0L7QutGB0LDRgNGLLCDQp9GD0LLQsNGI0YHQutCw0Y8g0KDQtdGB0L8uLCDQoNC-0YHRgdC40Y8sIDQyODAzMg!5e1!3m2!1sru!2sus!4v1774119664931!5m2!1sru!2sus" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Карта: мастерская"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        fetch('assets/header.html')
+            .then(function (response) { return response.text(); })
+            .then(function (data) {
+                document.getElementById('header-container').innerHTML = data;
+            });
+        fetch('assets/footer.html')
+            .then(function (response) { return response.text(); })
+            .then(function (data) {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости — Удивляй, надевай</title>
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="news-page">
+        <header class="news-page__head">
+            <h1 class="news-page__title">Новости</h1>
+            <p class="news-page__lead">События нашей мастерской, новые коллекции, мастер-классы и рекомендации — всё в одном месте.</p>
+            <a href="catalog.html" class="news-page__cta">Каталог</a>
+        </header>
+
+        <div class="news-grid">
+            <a href="#" class="news-card" id="news-1">
+                <div class="news-card__media">
+                    <img src="https://i.pinimg.com/736x/44/f1/d3/44f1d322b5ff235d9302d8ebcf30402f.jpg" alt="" width="600" height="750" loading="lazy" decoding="async">
+                </div>
+                <div class="news-card__body">
+                    <time class="news-card__cat" datetime="2026-03-15">15 марта 2026</time>
+                    <h2 class="news-card__name">Весенняя линейка: орнамент в новом прочтении</h2>
+                    <p class="news-card__excerpt">Представляем ограниченную серию шопперов и футболок с новыми видами традиционной вышивки. Все модели — вручную и из плотного хлопка.</p>
+                    <span class="news-card__hint">Читать дальше</span>
+                </div>
+            </a>
+
+            <a href="#" class="news-card" id="news-2">
+                <div class="news-card__media">
+                    <img src="https://i.pinimg.com/736x/93/e5/cd/93e5cd7e9d4195e7a701f9cf5551ee03.jpg" alt="" width="600" height="750" loading="lazy" decoding="async">
+                </div>
+                <div class="news-card__body">
+                    <time class="news-card__cat" datetime="2026-03-01">1 марта 2026</time>
+                    <h2 class="news-card__name">Расписание на апрель: открытые дни</h2>
+                    <p class="news-card__excerpt">По субботам в 12:00 — экскурсия по мастерской и знакомство с техниками ручной вышивки. Запись по телефону или в соцсетях.</p>
+                    <span class="news-card__hint">Читать дальше</span>
+                </div>
+            </a>
+
+            <a href="#" class="news-card" id="news-3">
+                <div class="news-card__media">
+                    <img src="https://i.pinimg.com/736x/14/ff/8a/14ff8ace3486fe3816d1208a3187a9de.jpg" alt="" width="600" height="750" loading="lazy" decoding="async">
+                </div>
+                <div class="news-card__body">
+                    <time class="news-card__cat" datetime="2026-02-18">18 февраля 2026</time>
+                    <h2 class="news-card__name">Совместный проект с местными художниками</h2>
+                    <p class="news-card__excerpt">Готовим "капсулу" головных уборов с принтами трёх авторов из Чебоксар. Часть средства с продаж пойдёт на городской фестиваль ремёсел.</p>
+                    <span class="news-card__hint">Читать дальше</span>
+                </div>
+            </a>
+
+            <a href="#" class="news-card" id="news-4">
+                <div class="news-card__media">
+                    <img src="https://i.pinimg.com/1200x/d3/c6/1e/d3c61eaa201f00436e45cecce6eeedde.jpg" alt="" width="600" height="750" loading="lazy" decoding="async">
+                </div>
+                <div class="news-card__body">
+                    <time class="news-card__cat" datetime="2026-02-01">1 февраля 2026</time>
+                    <h2 class="news-card__name">Как ухаживать за вещами из льна и шерсти</h2>
+                    <p class="news-card__excerpt">Короткая памятка: стирка, сушка и хранение изделий ручной работы, чтобы они служили годами и сохраняли свою форму.</p>
+                    <span class="news-card__hint">Читать дальше</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        fetch('assets/header.html')
+            .then(function (response) { return response.text(); })
+            .then(function (data) {
+                document.getElementById('header-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

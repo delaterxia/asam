@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара</title>
+    <link rel="stylesheet" href="css/product_cart.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="product-card">
+        <!-- Левая часть - изображение -->
+        <div class="product-image-section">
+            <img src="https://sun9-13.userapi.com/s/v1/ig2/_Y6JYyfq9OJBHaJkfXGsZlZsalUkmkLclr_9eluKovP6dHZbTYIlO4OQt8s4Zw6HF-670WREGNQQwCBXluiyDuJM.jpg?quality=95&as=32x38,48x57,72x85,108x127,160x189,240x283,360x424,480x566,540x637,640x755,642x757&from=bu&u=8nmeKnhlkF30lVn2nlWV7IWQfVB2t0hcssIaI838poc&cs=642x0" alt="Стул Моси" class="product-main-image">
+            <div class="product-thumbnails">
+                <img src="images/costumes.svg" alt="Вариант 1" class="thumbnail">
+                <img src="images/clothes.svg" alt="Вариант 2" class="thumbnail">
+                <img src="images/accessories.jpg" alt="Вариант 3" class="thumbnail">
+            </div>
+        </div>
+
+        <!-- Правая часть - информация о товаре -->
+        <div class="product-info-section">
+            <!-- Название товара -->
+            <h1 class="product-title">Костюм "Вышитый лён"</h1>
+
+
+            <!-- Описание -->
+            <p class="product-description">
+                Костюм со стразами и элегантными узорами, который идеально подойдет для тематических
+                праздников и фестивалей. Один из самых любимых товаров нашей команды.
+            </p>
+
+            <!-- Варианты цвета -->
+            <div class="color-variants">
+                <button class="color-btn color-red" title="Красный"></button>
+                <button class="color-btn color-white" title="Белый"></button>
+                <button class="color-btn color-beige" title="Бежевый"></button>
+            </div>
+
+            <!-- Характеристики -->
+            <div class="characteristics">
+                <button class="char-toggle">Подробнее о товаре</button>
+                <div class="char-content" style="display: none;">
+                    <ul>
+                        <li>Материалы: Лён 100%</li>
+                        <li>Размер: M</li>
+                        <li>Цвета: Красный, Бежевый</li>
+                        <li>Плотность: Средняя</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Цена и кнопки -->
+            <div class="product-footer">
+                <div class="price-section">
+                    <span class="price">9 999 ₽</span>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-cart">В корзину</button>
+                    <a href="#liked" class="icon-like-btn" title="Добавить в понравилось">
+                        <svg viewBox="0 0 24 24" class="icon-liked-btn">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра изображения -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Переключение характеристик
+        document.querySelector('.char-toggle').addEventListener('click', function() {
+            const content = document.querySelector('.char-content');
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            this.classList.toggle('active');
+        });
+
+        // Модальное окно для изображений
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.querySelector('.modal-image');
+        const closeBtn = document.querySelector('.close');
+
+        // Основное изображение кликабельно
+        document.querySelector('.product-main-image').addEventListener('click', function() {
+            modal.style.display = 'block';
+            modalImage.src = this.src;
+        });
+
+        // Миниатюры кликабельны и меняются местами с главным изображением
+        const mainImage = document.querySelector('.product-main-image');
+        document.querySelectorAll('.thumbnail').forEach(img => {
+            img.addEventListener('click', function() {
+                // Обмен изображениями
+                const tempSrc = mainImage.src;
+                mainImage.src = this.src;
+                this.src = tempSrc;
+            });
+        });
+
+        // Закрытие модального окна
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Загрузка header
+        fetch('assets/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+
+        // Scroll animation для текста
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const subtitle = document.querySelector('.services-subtitle');
+        if (subtitle) {
+            observer.observe(subtitle);
+        }
+    </script>
+</body>
+</html>

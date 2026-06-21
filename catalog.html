@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — Удивляй, надевай</title>
+    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="catalog-page">
+        <header class="catalog-page__head">
+            <h1 class="catalog-page__title">Каталог</h1>
+            <p class="catalog-page__lead">Костюмы, одежда, аксессуары и головные уборы — ручная работа, натуральные материалы. Выберите категорию или смотрите все товары.</p>
+        </header>
+
+        <div class="catalog-layout">
+            <aside class="catalog-sidebar" aria-label="Фильтры каталога">
+                <p class="catalog-sidebar__title">Фильтры</p>
+
+                <div class="catalog-toolbar">
+                    <div class="catalog-search-wrap">
+                        <label class="catalog-search-label" for="catalog-search">Поиск</label>
+                        <input type="search" id="catalog-search" class="catalog-search" placeholder="Поиск по названию или разделу…" autocomplete="off" spellcheck="false">
+                    </div>
+                    <p class="catalog-toolbar__hint">Можно искать по части слова. Подразделы одежды и аксессуаров открываются по нажатию на заголовок.</p>
+                </div>
+
+                <div class="catalog-filters" role="tablist" aria-label="Фильтр по категориям">
+                    <button type="button" class="catalog-filters__btn is-active" data-filter="all" role="tab" aria-selected="true">Все</button>
+                    <button type="button" class="catalog-filters__btn" data-filter="costumes" role="tab" aria-selected="false">Костюмы</button>
+                    <button type="button" class="catalog-filters__btn" data-filter="clothes" role="tab" aria-selected="false">Одежда</button>
+                    <button type="button" class="catalog-filters__btn" data-filter="accessories" role="tab" aria-selected="false">Аксессуары</button>
+                    <button type="button" class="catalog-filters__btn" data-filter="hats" role="tab" aria-selected="false">Головные уборы</button>
+                </div>
+
+                <div class="catalog-subfilters-shell" id="catalog-subfilters-clothes" hidden>
+            <button type="button" class="catalog-subfilters-toggle" id="catalog-toggle-clothes" aria-expanded="false" aria-controls="catalog-panel-clothes">
+                <span class="catalog-subfilters-toggle__text">Одежда — линейка</span>
+                <span class="catalog-subfilters-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="catalog-subfilters-panel" id="catalog-panel-clothes" role="group" aria-label="Линейка одежды">
+                <div class="catalog-subfilters-inner">
+                    <div class="catalog-subfilters__btns">
+                        <button type="button" class="catalog-subfilters__btn is-active" data-clothes-line="all">Все</button>
+                        <button type="button" class="catalog-subfilters__btn" data-clothes-line="mens">Мужское</button>
+                        <button type="button" class="catalog-subfilters__btn" data-clothes-line="womens">Женское</button>
+                        <button type="button" class="catalog-subfilters__btn" data-clothes-line="kids">Детское</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog-subfilters-shell" id="catalog-subfilters-accessories" hidden>
+            <button type="button" class="catalog-subfilters-toggle" id="catalog-toggle-accessories" aria-expanded="false" aria-controls="catalog-panel-accessories">
+                <span class="catalog-subfilters-toggle__text">Аксессуары — тип</span>
+                <span class="catalog-subfilters-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="catalog-subfilters-panel" id="catalog-panel-accessories" role="group" aria-label="Тип аксессуара">
+                <div class="catalog-subfilters-inner">
+                    <div class="catalog-subfilters__btns">
+                        <button type="button" class="catalog-subfilters__btn is-active" data-accessory-kind="all">Все</button>
+                        <button type="button" class="catalog-subfilters__btn" data-accessory-kind="bijoux">Бижутерия</button>
+                        <button type="button" class="catalog-subfilters__btn" data-accessory-kind="toys">Игрушки</button>
+                        <button type="button" class="catalog-subfilters__btn" data-accessory-kind="pendants">Подвески</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            </aside>
+
+            <div class="catalog-main">
+        <div class="catalog-products" id="catalog-grid">
+            <a href="product_cart.html" class="catalog-product" data-category="costumes">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-70.userapi.com/s/v1/ig2/YIvjXg-fk6-Bhsz4iRMFpEEF4eDdbAYJH53xQwHhWTkl-oHsWT3yOPJ5kXE7KDnz1Q-SPp5hM5Q4Sy5LKuXXleRU.jpg?quality=95&as=32x19,48x29,72x43,108x65,160x96,240x144,360x216,480x288,540x324,640x384,720x432,1080x648,1280x768,1334x800&from=bu&cs=1334x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Костюмы</span>
+                    <h2 class="catalog-product__name">Комплект «Орнамент»</h2>
+                    <span class="catalog-product__price">12 499 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="costumes">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-40.userapi.com/s/v1/ig2/-Q0NcuAub9B918pzMbcuDYxy21ERC4QqfTXEG0vFwTktaxwLcrfCDKXGGRy98oGW2_T4Mb7V485hOb2gxO6P55Hs.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x959,896x1194&from=bu&cs=896x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Костюмы</span>
+                    <h2 class="catalog-product__name">Костюм "Вышитый лён"</h2>
+                    <span class="catalog-product__price">14 999 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="clothes" data-clothes-line="womens">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-31.userapi.com/s/v1/ig2/fO7hmnGlDY3QGpu5EdVPwEw-iRnChP7l3Gvlsfy_RrHierHth7JZS4haqMYxr3XESfNI1dzOwsRPytwO-gFROnww.jpg?quality=95&as=32x19,48x29,72x43,108x65,160x96,240x144,360x216,480x288,540x324,640x384,720x432,1080x648,1280x768,1334x800&from=bu&cs=1334x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Головной убор · женское</span>
+                    <h2 class="catalog-product__name">Берет</h2>
+                    <span class="catalog-product__price">3 199 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="clothes" data-clothes-line="mens">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-87.userapi.com/s/v1/ig2/YfFunDZ3icn0w2eo9eurRNggZgG-UUax_miTB-BlIgqEdvuw_rYPcWJrbI9NBW6VOf2YDKplvHjOvXpr9-6C86mg.jpg?quality=95&as=32x40,48x60,72x90,108x135,160x200,240x300,360x450,480x600,540x675,640x800,720x900,922x1152&from=bu&cs=922x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Одежда · мужское</span>
+                    <h2 class="catalog-product__name">Рубашка с орнаментом</h2>
+                    <span class="catalog-product__price">5 799 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="clothes" data-clothes-line="kids">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-66.userapi.com/s/v1/ig2/nVlhxHzyiHUNjPHWkTOu4sPq4FKUSMI2PDBEYzzEzyfFoTPkHKSpQnrDJLGHdov1Mq4er2NO9kogYvRp2vWUjKxF.jpg?quality=95&as=32x32,48x47,72x71,108x107,160x158,240x237,360x356,480x475,540x534,640x633,720x712,728x720&from=bu&cs=728x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Одежда · детское</span>
+                    <h2 class="catalog-product__name">Туника с орнаментом</h2>
+                    <span class="catalog-product__price">9 499 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="accessories" data-accessory-kind="toys">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-1.userapi.com/s/v1/ig2/mm5AMzzAwQdU86CeLpIThC5Uba1tLI1AXgJgoczRzzEu5xZafm_a2OkeZd45se1lEFQIvOKGIV0eyTNLiV6K5GY6.jpg?quality=95&as=32x18,48x27,72x40,108x60,160x89,240x134,360x201,480x268,540x301,640x357,720x402,1080x603,1280x714,1376x768&from=bu&cs=1280x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Аксессуары · игрушки</span>
+                    <h2 class="catalog-product__name">Вязаная игрушка «Зайка»</h2>
+                    <span class="catalog-product__price">1 300 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="accessories" data-accessory-kind="bijoux">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-52.userapi.com/s/v1/ig2/3TfLqjzXDXbcMKqJMxCemzmwA4I04EGLjjWywFkh-M_zesc1nhpb139MrMOt8cIMq5YacXsjfO_UA1nj59qYppJC.jpg?quality=95&as=32x18,48x27,72x40,108x60,160x89,240x134,360x201,480x268,540x301,640x357,720x402,1080x603,1280x714,1376x768&from=bu&cs=1280x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Аксессуары · бижутерия</span>
+                    <h2 class="catalog-product__name">Серьги металлические</h2>
+                    <span class="catalog-product__price">1 199 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="accessories" data-accessory-kind="pendants">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-54.userapi.com/s/v1/ig2/BlyWoDMjXJ8Nx-3zyLV0Pg9AidpFNUJUyucGJFaluBqqPkmlNsywVbaTuMxMKtS0tZKusya1XUHj2RW5sxDds0lP.jpg?quality=95&as=32x18,48x27,72x40,108x60,160x89,240x134,360x201,480x268,540x301,640x357,720x402,1080x603,1280x714,1376x768&from=bu&cs=1280x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">Аксессуары · сумка</span>
+                    <h2 class="catalog-product__name">Сумка с орнаментом</h2>
+                    <span class="catalog-product__price">1 799 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="hats">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-77.userapi.com/s/v1/ig2/hkgswNIGOOwFWLhzutmWk9tpMpRWjZPLw_iYRyWGiw6RYuDKp-I1vrDroHABOo7TtJ17wmFa30V2pKwoUZcQBqpt.jpg?quality=95&as=32x12,48x18,72x28,108x41,160x61,240x92,360x138,480x184,540x207,640x246,720x276,1080x415,1280x491,1440x553,1667x640&from=bu&cs=1280x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">одежда · женское</span>
+                    <h2 class="catalog-product__name">Балетки "Чувашские"</h2>
+                    <span class="catalog-product__price">2 499 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+
+            <a href="product_cart.html" class="catalog-product" data-category="hats">
+                <div class="catalog-product__media">
+                    <img src="https://sun9-9.userapi.com/s/v1/ig2/lhVIpAWth12sPJkqEv_8kybmIVsRcC7KNxdkrsbvB37PmozTMbrwPl7eTN9-25LTaDkciL3SeJqWcFOzMpvgffA5.jpg?quality=95&as=32x19,48x29,72x43,108x65,160x96,240x144,360x216,480x288,540x324,640x384,720x432,1080x648,1280x768,1334x800&from=bu&cs=1334x0" alt="">
+                </div>
+                <div class="catalog-product__body">
+                    <span class="catalog-product__cat">одежда · женское</span>
+                    <h2 class="catalog-product__name">Серая юбка "Классическая"</h2>
+                    <span class="catalog-product__price">1 899 ₽</span>
+                    <span class="catalog-product__hint">Подробнее</span>
+                </div>
+            </a>
+        </div>
+
+        <p class="catalog-empty" id="catalog-empty" hidden role="status">Ничего не найдено — попробуйте другой запрос или сбросьте фильтры.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        fetch('assets/header.html')
+            .then(function (response) { return response.text(); })
+            .then(function (data) {
+                document.getElementById('header-container').innerHTML = data;
+            });
+
+        (function () {
+            var categoryButtons = document.querySelectorAll('.catalog-filters__btn');
+            var lineButtons = document.querySelectorAll('#catalog-subfilters-clothes .catalog-subfilters__btn');
+            var accessoryButtons = document.querySelectorAll('#catalog-subfilters-accessories .catalog-subfilters__btn');
+            var items = document.querySelectorAll('.catalog-product');
+            var searchInput = document.getElementById('catalog-search');
+            var subfiltersClothesEl = document.getElementById('catalog-subfilters-clothes');
+            var subfiltersAccessoriesEl = document.getElementById('catalog-subfilters-accessories');
+            var toggleClothesBtn = document.getElementById('catalog-toggle-clothes');
+            var toggleAccessoriesBtn = document.getElementById('catalog-toggle-accessories');
+            var emptyEl = document.getElementById('catalog-empty');
+
+            function getCategoryFilter() {
+                var active = document.querySelector('.catalog-filters__btn.is-active');
+                return active ? active.getAttribute('data-filter') : 'all';
+            }
+
+            function getClothesLineFilter() {
+                var active = document.querySelector('#catalog-subfilters-clothes .catalog-subfilters__btn.is-active');
+                return active ? active.getAttribute('data-clothes-line') : 'all';
+            }
+
+            function getAccessoryKindFilter() {
+                var active = document.querySelector('#catalog-subfilters-accessories .catalog-subfilters__btn.is-active');
+                return active ? active.getAttribute('data-accessory-kind') : 'all';
+            }
+
+            function normalize(s) {
+                return (s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+            }
+
+            function matchesSearch(card, q) {
+                if (!q) return true;
+                var nameEl = card.querySelector('.catalog-product__name');
+                var catEl = card.querySelector('.catalog-product__cat');
+                var name = normalize(nameEl ? nameEl.textContent : '');
+                var cat = normalize(catEl ? catEl.textContent : '');
+                return name.indexOf(q) !== -1 || cat.indexOf(q) !== -1;
+            }
+
+            function matchesCategory(card, catFilter) {
+                var cat = card.getAttribute('data-category');
+                return catFilter === 'all' || cat === catFilter;
+            }
+
+            function matchesClothesLine(card, lineFilter) {
+                var cat = card.getAttribute('data-category');
+                if (cat !== 'clothes') return true;
+                if (lineFilter === 'all') return true;
+                return (card.getAttribute('data-clothes-line') || '') === lineFilter;
+            }
+
+            function matchesAccessoryKind(card, kindFilter) {
+                var cat = card.getAttribute('data-category');
+                if (cat !== 'accessories') return true;
+                if (kindFilter === 'all') return true;
+                return (card.getAttribute('data-accessory-kind') || '') === kindFilter;
+            }
+
+            function subfiltersClothesRelevant(catFilter) {
+                return catFilter === 'all' || catFilter === 'clothes';
+            }
+
+            function subfiltersAccessoriesRelevant(catFilter) {
+                return catFilter === 'all' || catFilter === 'accessories';
+            }
+
+            function resetClothesLine() {
+                lineButtons.forEach(function (b) {
+                    b.classList.toggle('is-active', b.getAttribute('data-clothes-line') === 'all');
+                });
+            }
+
+            function resetAccessoryKind() {
+                accessoryButtons.forEach(function (b) {
+                    b.classList.toggle('is-active', b.getAttribute('data-accessory-kind') === 'all');
+                });
+            }
+
+            function syncAccordionPanels(catFilter) {
+                if (subfiltersClothesEl && !subfiltersClothesEl.hidden) {
+                    if (catFilter === 'clothes') {
+                        subfiltersClothesEl.classList.add('is-open');
+                        if (toggleClothesBtn) toggleClothesBtn.setAttribute('aria-expanded', 'true');
+                    } else if (catFilter === 'all') {
+                        subfiltersClothesEl.classList.remove('is-open');
+                        if (toggleClothesBtn) toggleClothesBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+                if (subfiltersAccessoriesEl && !subfiltersAccessoriesEl.hidden) {
+                    if (catFilter === 'accessories') {
+                        subfiltersAccessoriesEl.classList.add('is-open');
+                        if (toggleAccessoriesBtn) toggleAccessoriesBtn.setAttribute('aria-expanded', 'true');
+                    } else if (catFilter === 'all') {
+                        subfiltersAccessoriesEl.classList.remove('is-open');
+                        if (toggleAccessoriesBtn) toggleAccessoriesBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            }
+
+            function applyFilters() {
+                var catFilter = getCategoryFilter();
+                var lineFilter = getClothesLineFilter();
+                var kindFilter = getAccessoryKindFilter();
+                var q = normalize(searchInput.value);
+
+                if (subfiltersClothesEl) {
+                    subfiltersClothesEl.hidden = !subfiltersClothesRelevant(catFilter);
+                }
+                if (subfiltersAccessoriesEl) {
+                    subfiltersAccessoriesEl.hidden = !subfiltersAccessoriesRelevant(catFilter);
+                }
+
+                var visible = 0;
+                items.forEach(function (card) {
+                    var show =
+                        matchesCategory(card, catFilter) &&
+                        matchesClothesLine(card, lineFilter) &&
+                        matchesAccessoryKind(card, kindFilter) &&
+                        matchesSearch(card, q);
+                    card.hidden = !show;
+                    card.setAttribute('aria-hidden', show ? 'false' : 'true');
+                    if (show) visible += 1;
+                });
+
+                if (emptyEl) {
+                    emptyEl.hidden = visible !== 0;
+                }
+            }
+
+            categoryButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var filter = btn.getAttribute('data-filter');
+                    categoryButtons.forEach(function (b) {
+                        b.classList.toggle('is-active', b === btn);
+                        b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+                    });
+                    if (filter !== 'all' && filter !== 'clothes') {
+                        resetClothesLine();
+                    }
+                    if (filter !== 'all' && filter !== 'accessories') {
+                        resetAccessoryKind();
+                    }
+                    applyFilters();
+                    syncAccordionPanels(filter);
+                });
+            });
+
+            if (toggleClothesBtn && subfiltersClothesEl) {
+                toggleClothesBtn.addEventListener('click', function () {
+                    if (subfiltersClothesEl.hidden) return;
+                    subfiltersClothesEl.classList.toggle('is-open');
+                    toggleClothesBtn.setAttribute('aria-expanded', subfiltersClothesEl.classList.contains('is-open') ? 'true' : 'false');
+                });
+            }
+
+            if (toggleAccessoriesBtn && subfiltersAccessoriesEl) {
+                toggleAccessoriesBtn.addEventListener('click', function () {
+                    if (subfiltersAccessoriesEl.hidden) return;
+                    subfiltersAccessoriesEl.classList.toggle('is-open');
+                    toggleAccessoriesBtn.setAttribute('aria-expanded', subfiltersAccessoriesEl.classList.contains('is-open') ? 'true' : 'false');
+                });
+            }
+
+            lineButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    lineButtons.forEach(function (b) {
+                        b.classList.toggle('is-active', b === btn);
+                    });
+                    applyFilters();
+                });
+            });
+
+            accessoryButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    accessoryButtons.forEach(function (b) {
+                        b.classList.toggle('is-active', b === btn);
+                    });
+                    applyFilters();
+                });
+            });
+
+            searchInput.addEventListener('input', applyFilters);
+            searchInput.addEventListener('search', applyFilters);
+
+            applyFilters();
+            syncAccordionPanels(getCategoryFilter());
+        })();
+    </script>
+</body>
+</html>
